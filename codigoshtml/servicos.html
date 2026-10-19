@@ -1,13 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../codigoscss/estiloservicos.css">
-    <script src="../codigosjavascript/servicos.js"></script>
+
+    <title>SIGNALS - Serviços</title>
+
+    <link rel="stylesheet" href="servicos.css">
 </head>
+
 <body>
-    
+
+    <header>
+        <h1>SIGNALS</h1>
+
+        <nav>
+            <a href="#">Eventos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Produtos</a>
+            <a href="#">Mapas</a>
+            <a href="#">Trabalhe Conosco</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="introducao">
+
+            <h2>Serviços de acessibilidade</h2>
+
+            <p>
+                Encontre recursos que tornam os eventos culturais
+                mais acessíveis para pessoas surdas.
+            </p>
+
+        </section>
+
+
+        <section class="cadastro">
+
+            <h2>Cadastrar novo serviço</h2>
+
+            <form id="formServico">
+
+                <input type="hidden" id="id">
+
+                <label for="nome">
+                    Nome do serviço
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Ex: Intérprete de Libras"
+                    required
+                >
+
+
+                <label for="descricao">
+                    Descrição
+                </label>
+
+                <input
+                    type="text"
+                    id="descricao"
+                    placeholder="Explique brevemente como o serviço ajuda"
+                    required
+                >
+
+
+                <label for="categoria">
+                    Categoria
+                </label>
+
+                <select id="categoria" required>
+
+                    <option value="">
+                        Selecione uma categoria
+                    </option>
+
+                    <option value="Comunicação">
+                        Comunicação
+                    </option>
+
+                    <option value="Informação">
+                        Informação
+                    </option>
+
+                    <option value="Atendimento">
+                        Atendimento
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Cadastrar serviço
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="servicos">
+
+            <h2>Serviços disponíveis</h2>
+
+            <div id="listaServicos"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="servicos.js"></script>
+
 </body>
+
 </html>
