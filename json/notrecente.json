@@ -1,0 +1,40 @@
+{
+
+    "notícias recentes": [
+        {
+       "id": "1",
+       "titulo": "Primeira notícia",
+       "descricao": "Descrição da primeira notícia recente",
+       "imagem": "Imagem de carrossel da primeira notícia"
+        },
+        {
+       "id": "2",
+       "titulo": "Segunda notícia",
+       "descricao": "Descrição da segunda notícia recente",
+       "imagem": "Imagem de carrossel da segunda notícia"
+        }
+    ]
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

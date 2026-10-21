@@ -1,0 +1,108 @@
+{
+  "vagas": [
+    {
+      "id": 1,
+      "titulo": "Assistente Administrativo",
+      "modalidade": "Híbrido",
+      "tipo": "CLT",
+      "localizacao": "Belo Horizonte - MG",
+      "salario": 3000,
+      "status": "Aberta"
+    },
+    {
+      "id": 2,
+      "titulo": "Intérprete de Libras",
+      "modalidade": "Remoto",
+      "tipo": "CLT",
+      "localizacao": "Belo Horizonte-MG",
+      "salario": 3500,
+      "status": "Aberta"
+    }
+  ],
+  "candidatos": [
+    {
+      "id": 1,
+      "nome": "Isocrates da Silva",
+      "email": "isocrates.silva@gmail.com",
+      "telefone": "(31) 12345-6789",
+      "cidade": "Belo Horizonte",
+      "estado": "MG",
+      "formacao": "Letras",
+      "curriculo": "/curriculos/isocrates_silva.pdf",
+      "dataCadastro": "2026-09-03"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@gmail.com",
+      "telefone": "(31) 98888-8888",
+      "cidade": "Contagem",
+      "estado": "MG",
+      "formacao": "Administração",
+      "curriculo": "/curriculos/maria_oliveira.pdf",
+      "dataCadastro": "2026-09-18"
+    }
+  ],
+  "candidaturas": [
+    {
+      "id": 1,
+      "vagaId": 1,
+      "candidatoId": 1,
+      "dataCandidatura": "2026-09-03",
+      "status": "Em análise",
+      "observacao": "Atende aos requisitos da vaga."
+    },
+    {
+      "id": 2,
+      "vagaId": 2,
+      "candidatoId": 2,
+      "dataCandidatura": "2026-09-18",
+      "status": "Aprovado para entrevista",
+      "observacao": "Experiência compatível com a vaga."
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{
+    "servicos": [
+        {
+            "id": "1",
+            "nome": "Intérprete de Libras",
+            "descricao": "Profissional responsável pela interpretação do evento em Libras.",
+            "categoria": "Comunicação"
+        },
+        {
+            "id": "2",
+            "nome": "Legendas em tempo real",
+            "descricao": "Exibição das falas do evento em texto.",
+            "categoria": "Comunicação"
+        }
+    ]
+}

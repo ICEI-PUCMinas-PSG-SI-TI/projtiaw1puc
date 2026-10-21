@@ -1,0 +1,167 @@
+{
+    "página inicial": [
+        {
+            "id": "1",
+            "titulo": "Menu",
+            "descricao": "Navegação do site",
+            "imagem": "Logomarca do SIGNALS",
+            "item 1": "Dúvidas frequentes",
+            "item 2": "Sobre o SIGNALS",
+            "item 3": "Mapas de eventos",
+            "item 4": "Conta"      
+        }
+    ],
+    "eventos acontecendo agora": [
+        {
+       "id": "1",
+       "titulo": "Primeiro evento", 
+       "descricao": "Descrição do primeiro evento",
+       "imagem do carrossel": "Imagem do primeiro evento"
+        },
+        {
+       "id": "2",
+       "titulo": "Segundo evento", 
+       "descricao": "Descrição do segundo evento",
+       "imagem do carrossel": "Imagem do segundo evento"
+        },
+        {
+       "id": "3",
+       "titulo": "Terceiro evento", 
+       "descricao": "Descrição do terceiro evento",
+       "imagem do carrossel": "Imagem do terceiro evento"
+        }
+    ],
+    "notícias recentes": [
+        {
+       "id": "1",
+       "titulo": "Primeira notícia",
+       "descricao": "Descrição da primeira notícia recente",
+       "imagem": "Imagem de carrossel da primeira notícia"
+        },
+        {
+       "id": "2",
+       "titulo": "Segunda notícia",
+       "descricao": "Descrição da segunda notícia recente",
+       "imagem": "Imagem de carrossel da segunda notícia"
+        }
+    ]            
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
