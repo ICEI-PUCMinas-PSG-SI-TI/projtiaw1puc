@@ -1,0 +1,158 @@
+{
+    "página inicial": [
+        {
+            "id": "1",
+            "titulo": "Menu",
+            "descricao": "Navegação do site",
+            "imagem": "Logomarca do SIGNALS",
+            "item 1": "Dúvidas frequentes",
+            "item 2": "Sobre o SIGNALS",
+            "item 3": "Mapas de eventos",
+            "item 4": "Conta"      
+        }
+    ],
+    "eventos acontecendo agora": [
+        {
+       "id": "1",
+       "titulo": "Primeiro evento", 
+       "descricao": "Descrição do primeiro evento",
+       "imagem do carrossel": "Imagem do primeiro evento"
+        },
+        {
+       "id": "2",
+       "titulo": "Segundo evento", 
+       "descricao": "Descrição do segundo evento",
+       "imagem do carrossel": "Imagem do segundo evento"
+        },
+        {
+       "id": "3",
+       "titulo": "Terceiro evento", 
+       "descricao": "Descrição do terceiro evento",
+       "imagem do carrossel": "Imagem do terceiro evento"
+        }
+    ],
+    "notícias recentes": [
+        {
+       "id": "1",
+       "titulo": "Primeira notícia",
+       "descricao": "Descrição da primeira notícia recente",
+       "imagem": "Imagem de carrossel da primeira notícia"
+        },
+        {
+       "id": "2",
+       "titulo": "Segunda notícia",
+       "descricao": "Descrição da segunda notícia recente",
+       "imagem": "Imagem de carrossel da segunda notícia"
+        }
+    ],            
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Conferência Acessibilidade na Tech",
+      "data": "15/Out",
+      "horario": "19h",
+      "local": "Online",
+      "recursosAcessibilidade": "Intérprete Libras, Legendas"
+    },
+    {
+      "id": 2,
+      "titulo": "Workshop Libras para Iniciantes",
+      "data": "22/Out",
+      "horario": "14h",
+      "local": "Centro Cultural",
+      "recursosAcessibilidade": "Intérprete Libras"
+    },
+    {
+      "id": 3,
+      "titulo": "Festival de Teatro Inclusivo",
+      "data": "05/Nov",
+      "horario": "18h30",
+      "local": "Teatro Municipal",
+      "recursosAcessibilidade": "Intérprete Libras, Audiodescrição"
+    },
+    {
+      "id": 4,
+      "titulo": "Meetup Network Surdos em Tech",
+      "data": "12/Nov",
+      "horario": "11h",
+      "local": "Espaço Co-working",
+      "recursosAcessibilidade": "Legendas (CART)"
+    }
+  ],
+    "servicos": [
+        {
+            "id": "1",
+            "nome": "Intérprete de Libras",
+            "descricao": "Profissional responsável pela interpretação do evento em Libras.",
+            "categoria": "Comunicação"
+        },
+        {
+            "id": "2",
+            "nome": "Legendas em tempo real",
+            "descricao": "Exibição das falas do evento em texto.",
+            "categoria": "Comunicação"
+        }
+    ],
+  "vagas": [
+    {
+      "id": 1,
+      "titulo": "Assistente Administrativo",
+      "modalidade": "Híbrido",
+      "tipo": "CLT",
+      "localizacao": "Belo Horizonte - MG",
+      "salario": 3000,
+      "status": "Aberta"
+    },
+    {
+      "id": 2,
+      "titulo": "Intérprete de Libras",
+      "modalidade": "Remoto",
+      "tipo": "CLT",
+      "localizacao": "Belo Horizonte-MG",
+      "salario": 3500,
+      "status": "Aberta"
+    }
+  ],
+  "candidatos": [
+    {
+      "id": 1,
+      "nome": "Isocrates da Silva",
+      "email": "isocrates.silva@gmail.com",
+      "telefone": "(31) 12345-6789",
+      "cidade": "Belo Horizonte",
+      "estado": "MG",
+      "formacao": "Letras",
+      "curriculo": "/curriculos/isocrates_silva.pdf",
+      "dataCadastro": "2026-09-03"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@gmail.com",
+      "telefone": "(31) 98888-8888",
+      "cidade": "Contagem",
+      "estado": "MG",
+      "formacao": "Administração",
+      "curriculo": "/curriculos/maria_oliveira.pdf",
+      "dataCadastro": "2026-09-18"
+    }
+  ],
+  "candidaturas": [
+    {
+      "id": 1,
+      "vagaId": 1,
+      "candidatoId": 1,
+      "dataCandidatura": "2026-09-03",
+      "status": "Em análise",
+      "observacao": "Atende aos requisitos da vaga."
+    },
+    {
+      "id": 2,
+      "vagaId": 2,
+      "candidatoId": 2,
+      "dataCandidatura": "2026-09-18",
+      "status": "Aprovado para entrevista",
+      "observacao": "Experiência compatível com a vaga."
+    }
+  ]
+}
