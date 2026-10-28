@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: white;
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    color: #0817e6;
+}
+
+nav a {
+    margin: 0 12px;
+    color: #222;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #0817e6;
+    text-decoration: underline;
+}
+
+
+/* CONTEÚDO */
+
+main {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.introducao {
+    margin-bottom: 30px;
+}
+
+.introducao h2 {
+    margin-bottom: 8px;
+    color: #0817e6;
+}
+
+.introducao p {
+    color: #555;
+}
+
+
+/* CADASTRO */
+
+.cadastro {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.cadastro h2 {
+    margin-top: 0;
+    color: #0817e6;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #0817e6;
+    border-color: #0817e6;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #0817e6;
+    color: white;
+}
+
+button:hover {
+    background-color: #0612b8;
+}
+
+
+/* CARDS DOS SERVIÇOS */
+
+#listaServicos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.servicos h2 {
+    color: #0817e6;
+}
+
+.servico {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top: 3px solid #0817e6;
+}
+
+.servico h3 {
+    margin-top: 0;
+    color: #0817e6;
+}
+
+.servico p {
+    color: #555;
+}
+
+.servico button {
+    margin-right: 8px;
+}
+
+.servico button:last-child {
+    background-color: #777;
+}
