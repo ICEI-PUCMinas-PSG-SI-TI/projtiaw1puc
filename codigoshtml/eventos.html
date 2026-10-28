@@ -1,13 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../codigoscss/estiloeventos.css">
-    <script src="../codigosjavascript/eventos.js"></script>
+    <title>SIGNALS - Eventos</title>
+    <link rel="stylesheet" href="../codigocss/estiloeventos.css">  
+ 
 </head>
 <body>
-    
+
+    <!-- BARRA DO NAVEGADOR -->
+    <div class="browser-bar">
+        <div class="browser-nav">
+            <button>&lt;</button>
+            <button>&gt;</button>
+            <span class="url-box">🔒 https://www.signals.com/eventos</span>
+        </div>
+        <div class="user-icon">👤</div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="main-header">
+        <div class="header-left">
+            <a href="#">➤ Sobre Nós</a>
+        </div>
+        <div class="header-center">
+            <h1>SIGNALS</h1>
+            <div class="libras-symbols">🤟👇👍☝️</div>
+        </div>
+        <div class="header-right">
+            <select><option>⌄</option></select>
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" placeholder="Pesquise algo...">
+            </div>
+            <button class="menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO PRINCIPAL -->
+    <nav class="main-nav">
+        <ul>
+            <li class="active">🌐 Eventos</li>
+            <li class="separator">|</li>
+            <li>➕ Serviços</li>
+            <li class="separator">|</li>
+            <li>🛒 Produtos</li>
+            <li class="separator">|</li>
+            <li>📍 Mapas</li>
+            <li class="separator">|</li>
+            <li>👥 Trabalhe Conosco</li>
+        </ul>
+    </nav>
+
+    <!-- CONTEÚDO (COLUNA ESQUERDA + COLUNA DIREITA) -->
+    <div class="container">
+        
+        <!-- SIDEBAR DE FILTROS -->
+        <aside class="sidebar">
+            <h2>Filtros de Pesquisa</h2>
+            
+            <div class="search-filter">
+                <span>🔍</span>
+                <input type="text" placeholder="Buscar por nome do evento...">
+            </div>
+
+            <div class="filter-section">
+                <h3>Recursos de Acessibilidade</h3>
+                <label><input type="checkbox"> Intérprete Libras</label>
+                <label><input type="checkbox"> Legendas (CART)</label>
+                <label><input type="checkbox"> Audiodescrição</label>
+            </div>
+
+            <div class="filter-section">
+                <h3>Categoria</h3>
+                <div class="select-wrapper">
+                    <select><option></option></select>
+                </div>
+            </div>
+
+            <!-- DATAS AJUSTADAS IGUAL A IMAGEM -->
+            <div class="filter-section">
+                <div class="dates-container">
+                    <div class="date-field-group">
+                        <label>Data</label>
+                        <div class="date-input-wrapper">
+                            <input type="text">
+                            <span class="calendar-btn">📅</span>
+                        </div>
+                    </div>
+                    <div class="date-field-group">
+                        <label>Data</label>
+                        <div class="date-input-wrapper">
+                            <input type="text">
+                            <span class="calendar-btn">📅</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ÁREA DOS CARDS DE EVENTOS -->
+        <main class="events-section">
+            <h2>Próximos Eventos Acessíveis</h2>
+
+            <div class="events-grid">
+                
+                <!-- CARD 1 -->
+                <div class="card">
+                    <div class="image-placeholder">
+                        <span class="badge">🤟</span>
+                        <div class="cam-icon">📷</div>
+                        <p>[IMAGEM DO EVENTO]</p>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Título:</strong> Conferência Acessibilidade na Tech</p>
+                        <p><strong>Data:</strong> 15/Out, 19h</p>
+                        <p><strong>Local:</strong> Online</p>
+                        <p><strong>Recursos de Acessibilidade:</strong> Intérprete Libras, Legendas</p>
+                    </div>
+                    <button class="btn-details">Ver Detalhes</button>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card">
+                    <div class="image-placeholder">
+                        <span class="badge">💬</span>
+                        <div class="cam-icon">📷</div>
+                        <p>[IMAGEM DO EVENTO]</p>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Título:</strong> Workshop Libras para Iniciantes</p>
+                        <p><strong>Data:</strong> 22/Out, 14h</p>
+                        <p><strong>Local:</strong> Centro Cultural</p>
+                        <p><strong>Recursos:</strong> Intérprete Libras</p>
+                    </div>
+                    <button class="btn-details">Ver Detalhes</button>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card">
+                    <div class="image-placeholder">
+                        <span class="badge">🤟</span>
+                        <div class="cam-icon">📷</div>
+                        <p>[IMAGEM DO EVENTO]</p>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Título:</strong> Festival de Teatro Inclusivo</p>
+                        <p><strong>Data:</strong> 05/Nov, 18h30</p>
+                        <p><strong>Local:</strong> Teatro Municipal</p>
+                        <p><strong>Recursos de Acessibilidade:</strong> Intérprete Libras, Audiodescrição</p>
+                    </div>
+                    <button class="btn-details">Ver Detalhes</button>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="card">
+                    <div class="image-placeholder">
+                        <span class="badge">💬</span>
+                        <div class="cam-icon">📷</div>
+                        <p>[IMAGEM DO EVENTO]</p>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Título:</strong> Meetup Network Surdos em Tech</p>
+                        <p><strong>Data:</strong> 12/Nov, 11h</p>
+                        <p><strong>Local:</strong> Espaço Co-working</p>
+                        <p><strong>Recursos:</strong> Legendas (CART)</p>
+                    </div>
+                    <button class="btn-details">Ver Detalhes</button>
+                </div>
+
+            </div>
+
+            <div class="events-footer">
+                <span>Total de Eventos: 12</span>
+                <span>Página 1 of 3</span>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="main-footer">
+        <p>© 2026 SIGNALS. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
