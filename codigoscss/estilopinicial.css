@@ -15,7 +15,17 @@ h2{
 .menu{
     background-color: white
 }
-
+.rodape{
+    display: flex;
+    flex-direction:column;
+}
+.tituloprincipal{
+    text-align: center;
+}
+.imagemcabec{
+    width: 60px;
+    justify-content: start;
+}
 
 
 
