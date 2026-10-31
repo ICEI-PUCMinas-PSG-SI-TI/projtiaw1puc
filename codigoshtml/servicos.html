@@ -4,119 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SIGNALS - Serviços</title>
-
+    <title>SIGNALS - Serviços de acessibilidade</title>
     <link rel="stylesheet" href="../codigoscss/estiloservicos.css">
 </head>
 
 <body>
 
     <header>
-        <h1>SIGNALS</h1>
-
-        <nav>
-            <a href="#">Eventos</a>
-            <a href="#">Serviços</a>
-            <a href="#">Produtos</a>
-            <a href="#">Mapas</a>
-            <a href="#">Trabalhe Conosco</a>
-        </nav>
+        <div class="topo">
+            <h1>SIGNALS</h1>
+        </div>
     </header>
-
 
     <main>
 
         <section class="introducao">
+            <h2>Encontre serviços de acessibilidade</h2>
+            <p>Conheça soluções e profissionais que ajudam a tornar eventos culturais mais acessíveis para pessoas surdas.</p>
+        </section>
 
-            <h2>Serviços de acessibilidade</h2>
+        <section id="catalogo" class="secao">
 
-            <p>
-                Encontre recursos que tornam os eventos culturais
-                mais acessíveis para pessoas surdas.
-            </p>
+            <div class="titulo-secao">
+                <h2>Alguns serviços de acessibilidade</h2>
+                <p>Conheça alguns exemplos de serviços que ajudam a tornar os eventos mais inclusivos.</p>
+            </div>
+
+            <div class="servicos-destaque">
+
+                <article class="card-destaque">
+                    <img src="../imagens/interprete-libras.svg"
+                        alt="Ilustração de intérprete de Libras">
+                    <div class="card-destaque-conteudo">
+                        <h3>Contrate intérpretes para eventos</h3>
+                        <p>Encontre profissionais de Libras para palestras, shows e apresentações culturais.</p>
+                        <button type="button" class="botaoContratar" data-id="1">
+                            Quero contratar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-destaque">
+                    <img src="../imagens/legendagem.svg"
+                        alt="Ilustração de tela com legendas">
+                    <div class="card-destaque-conteudo">
+                        <h3>Legendas online</h3>
+                        <p>Serviços de legendagem para vídeos, palestras e apresentações.</p>
+                        <button type="button" class="botaoContratar" data-id="2">
+                            Quero contratar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-destaque">
+                    <img src="../imagens/consultoria.svg"
+                        alt="Ilustração de tradução online">
+                    <div class="card-destaque-conteudo">
+                        <h3>Tradutor de Libras online</h3>
+                        <p>Encontre soluções de tradução e comunicação em Libras pela internet.</p>
+                        <button type="button" class="botaoContratar" data-id="3">
+                            Quero contratar
+                        </button>
+                    </div>
+                </article>
+
+            </div>
 
         </section>
 
+        <div class="separador"></div>
 
-        <section class="cadastro">
+        <section id="sugestoes" class="secao caixa">
 
-            <h2>Cadastrar novo serviço</h2>
+            <h2>Não encontrou o serviço que procura?</h2>
 
-            <form id="formServico">
+            <p>Conte para nós qual serviço de acessibilidade você gostaria de encontrar no SIGNALS.</p>
 
-                <input type="hidden" id="id">
+            <form id="formSugestao">
 
-                <label for="nome">
-                    Nome do serviço
-                </label>
+                <label for="nomeSugestao">Seu nome (opcional)</label>
+                <input type="text" id="nomeSugestao"
+                    placeholder="Como podemos chamar você?">
 
-                <input
-                    type="text"
-                    id="nome"
-                    placeholder="Ex: Intérprete de Libras"
-                    required
-                >
+                <label for="descricaoSugestao">Qual serviço você gostaria de encontrar?</label>
+                <textarea id="descricaoSugestao" rows="4"
+                    placeholder="Descreva sua sugestão..." required></textarea>
 
-
-                <label for="descricao">
-                    Descrição
-                </label>
-
-                <input
-                    type="text"
-                    id="descricao"
-                    placeholder="Explique brevemente como o serviço ajuda"
-                    required
-                >
-
-
-                <label for="categoria">
-                    Categoria
-                </label>
-
-                <select id="categoria" required>
-
-                    <option value="">
-                        Selecione uma categoria
-                    </option>
-
-                    <option value="Comunicação">
-                        Comunicação
-                    </option>
-
-                    <option value="Informação">
-                        Informação
-                    </option>
-
-                    <option value="Atendimento">
-                        Atendimento
-                    </option>
-
-                </select>
-
-
-                <button type="submit">
-                    Cadastrar serviço
-                </button>
+                <button type="submit">Enviar sugestão</button>
 
             </form>
 
-        </section>
-
-
-        <section class="servicos">
-
-            <h2>Serviços disponíveis</h2>
-
-            <div id="listaServicos"></div>
+            <p id="mensagemSugestao" class="mensagem" aria-live="polite"></p>
 
         </section>
 
     </main>
 
+    <!-- MODAL DE CONTRATAÇÃO -->
 
-      <script src="../codigosjavascript/servicos.js"></script>
+    <div id="modalDetalhes" class="modal" hidden>
+
+        <div class="modal-conteudo">
+
+            <button type="button" id="fecharModal" class="fechar"
+                aria-label="Fechar">×</button>
+
+            <div id="conteudoDetalhes"></div>
+
+            <form id="formSolicitacao">
+
+                <h3>Solicitar contratação</h3>
+
+                <input type="hidden" id="idSolicitado">
+
+                <p id="servicoEscolhido"></p>
+
+                <label for="nomeSolicitante">Nome completo</label>
+                <input type="text" id="nomeSolicitante"
+                    placeholder="Digite seu nome" required>
+
+                <label for="emailSolicitante">E-mail</label>
+                <input type="email" id="emailSolicitante"
+                    placeholder="Digite seu e-mail" required>
+
+                <label for="telefoneSolicitante">Telefone</label>
+                <input type="tel" id="telefoneSolicitante"
+                    placeholder="(31) 99999-9999" required>
+
+                <button type="submit">Enviar solicitação</button>
+
+                <p id="mensagemSolicitacao" class="mensagem"
+                    aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>SIGNALS — Acessibilidade e inclusão em eventos culturais.</p>
+    </footer>
+
+    <script src="../codigosjavascript/servicos.js"></script>
 
 </body>
 

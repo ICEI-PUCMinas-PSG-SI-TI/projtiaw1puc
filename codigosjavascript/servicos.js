@@ -1,238 +1,144 @@
+const API = "http://localhost:3000";
 
-const API = "../json/servicos.json";
-
-const lista = document.getElementById("listaServicos");
-const formulario = document.getElementById("formServico");
+const formSugestao = document.getElementById("formSugestao");
+const formSolicitacao = document.getElementById("formSolicitacao");
+const modal = document.getElementById("modalDetalhes");
 
 let servicos = [];
-let idsOriginais = [];
-
 
 // CARREGAR SERVIÇOS
-
 async function carregarServicos() {
     try {
-        const resposta = await fetch(API);
+        const resposta = await fetch(API + "/servicos");
 
         if (!resposta.ok) {
-            throw new Error("Erro ao carregar o JSON.");
+            throw new Error("Erro ao carregar serviços");
         }
 
-        const dados = await resposta.json();
+        servicos = await resposta.json();
 
-        servicos = dados.servicos || [];
-        idsOriginais = servicos.map(servico => String(servico.id));
+        // ATIVAR BOTÕES DE CONTRATAÇÃO
+        const botoesContratar = document.querySelectorAll(".botaoContratar");
 
-        const extras = JSON.parse(
-            localStorage.getItem("servicosExtras") || "[]"
-        );
-
-        const excluidos = JSON.parse(
-            localStorage.getItem("servicosExcluidos") || "[]"
-        );
-
-        const alteracoes = JSON.parse(
-            localStorage.getItem("servicosAlterados") || "{}"
-        );
-
-        servicos = servicos
-            .filter(servico =>
-                !excluidos.includes(String(servico.id))
-            )
-            .map(servico =>
-                alteracoes[String(servico.id)] || servico
-            );
-
-        servicos = [...servicos, ...extras];
-
-        mostrarServicos();
+        botoesContratar.forEach(function (botao) {
+            botao.addEventListener("click", function () {
+                abrirDetalhes(botao.dataset.id);
+            });
+        });
 
     } catch (erro) {
-        console.error("Erro ao carregar os serviços:", erro);
+        alert("Não foi possível carregar os serviços. Verifique se o JSON Server está ligado.");
     }
 }
 
-
-// MOSTRAR SERVIÇOS
-
-function mostrarServicos() {
-    lista.innerHTML = "";
-
-    if (servicos.length === 0) {
-        lista.innerHTML = "<p>Ainda não há serviços cadastrados.</p>";
-        return;
-    }
-
-    servicos.forEach(servico => {
-        const card = document.createElement("div");
-        card.className = "servico";
-
-        const titulo = document.createElement("h3");
-        titulo.textContent = servico.nome;
-
-        const descricao = document.createElement("p");
-        descricao.textContent = servico.descricao;
-
-        const categoria = document.createElement("p");
-        categoria.textContent = "Categoria: " + servico.categoria;
-
-        const botaoEditar = document.createElement("button");
-        botaoEditar.type = "button";
-        botaoEditar.textContent = "Editar";
-        botaoEditar.addEventListener("click", () => {
-            editarServico(servico.id);
-        });
-
-        const botaoExcluir = document.createElement("button");
-        botaoExcluir.type = "button";
-        botaoExcluir.textContent = "Excluir";
-        botaoExcluir.addEventListener("click", () => {
-            excluirServico(servico.id);
-        });
-
-        card.append(
-            titulo,
-            descricao,
-            categoria,
-            botaoEditar,
-            botaoExcluir
-        );
-
-        lista.appendChild(card);
+// ABRIR FORMULÁRIO
+function abrirDetalhes(id) {
+    const servico = servicos.find(function (item) {
+        return String(item.id) === String(id);
     });
-}
 
-
-// CADASTRAR E ATUALIZAR SERVIÇOS
-
-formulario.addEventListener("submit", function(evento) {
-    evento.preventDefault();
-
-    const id = document.getElementById("id").value;
-    const nome = document.getElementById("nome").value.trim();
-    const descricao = document.getElementById("descricao").value.trim();
-    const categoria = document.getElementById("categoria").value;
-
-    if (!nome || !descricao || !categoria) {
-        alert("Preencha todos os campos!");
+    if (!servico) {
+        alert("Serviço não encontrado.");
         return;
     }
 
-    const servico = {
-        id: id || String(Date.now()),
-        nome,
-        descricao,
-        categoria
-    };
+    formSolicitacao.reset();
 
-    let extras = JSON.parse(
-        localStorage.getItem("servicosExtras") || "[]"
-    );
+    document.getElementById("idSolicitado").value = servico.id;
 
-    let alteracoes = JSON.parse(
-        localStorage.getItem("servicosAlterados") || "{}"
-    );
+    document.getElementById("servicoEscolhido").textContent =
+        "Serviço escolhido: " + servico.nome;
 
-    if (id) {
-        const indice = servicos.findIndex(
-            item => String(item.id) === String(id)
-        );
+    document.getElementById("mensagemSolicitacao").textContent = "";
 
-        if (indice === -1) return;
+    modal.hidden = false;
+}
 
-        servicos[indice] = servico;
-
-        if (idsOriginais.includes(String(id))) {
-            alteracoes[String(id)] = servico;
-        } else {
-            extras = extras.map(item =>
-                String(item.id) === String(id) ? servico : item
-            );
-        }
-
-    } else {
-        servicos.push(servico);
-        extras.push(servico);
-    }
-
-    localStorage.setItem("servicosExtras", JSON.stringify(extras));
-    localStorage.setItem("servicosAlterados", JSON.stringify(alteracoes));
-
-    mostrarServicos();
-    formulario.reset();
-    document.getElementById("id").value = "";
-
-    formulario.querySelector('button[type="submit"]').textContent =
-        "Cadastrar serviço";
+// FECHAR FORMULÁRIO
+document.getElementById("fecharModal").addEventListener("click", function () {
+    modal.hidden = true;
 });
 
-
-// EDITAR SERVIÇO
-
-function editarServico(id) {
-    const servico = servicos.find(
-        item => String(item.id) === String(id)
-    );
-
-    if (!servico) return;
-
-    document.getElementById("id").value = servico.id;
-    document.getElementById("nome").value = servico.nome;
-    document.getElementById("descricao").value = servico.descricao;
-    document.getElementById("categoria").value = servico.categoria;
-
-    formulario.querySelector('button[type="submit"]').textContent =
-        "Salvar alterações";
-
-    formulario.scrollIntoView({ behavior: "smooth" });
-}
-
-
-// EXCLUIR SERVIÇO
-
-function excluirServico(id) {
-    if (!confirm("Tem certeza de que deseja excluir este serviço?")) {
-        return;
+modal.addEventListener("click", function (evento) {
+    if (evento.target === modal) {
+        modal.hidden = true;
     }
+});
 
-    const idTexto = String(id);
+// ENVIAR SOLICITAÇÃO
+async function enviarSolicitacao(evento) {
+    evento.preventDefault();
 
-    servicos = servicos.filter(
-        item => String(item.id) !== idTexto
-    );
+    const solicitacao = {
+        servicoId: document.getElementById("idSolicitado").value,
+        servico: document.getElementById("servicoEscolhido").textContent.replace("Serviço escolhido: ", ""),
+        nome: document.getElementById("nomeSolicitante").value.trim(),
+        email: document.getElementById("emailSolicitante").value.trim(),
+        telefone: document.getElementById("telefoneSolicitante").value.trim(),
+        status: "Recebida"
+    };
 
-    let extras = JSON.parse(
-        localStorage.getItem("servicosExtras") || "[]"
-    );
+    try {
+        const resposta = await fetch(API + "/solicitacoes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(solicitacao)
+        });
 
-    let excluidos = JSON.parse(
-        localStorage.getItem("servicosExcluidos") || "[]"
-    );
-
-    let alteracoes = JSON.parse(
-        localStorage.getItem("servicosAlterados") || "{}"
-    );
-
-    extras = extras.filter(
-        item => String(item.id) !== idTexto
-    );
-
-    if (idsOriginais.includes(idTexto)) {
-        if (!excluidos.includes(idTexto)) {
-            excluidos.push(idTexto);
+        if (!resposta.ok) {
+            throw new Error("Erro ao enviar solicitação");
         }
 
-        delete alteracoes[idTexto];
+        formSolicitacao.reset();
+
+        document.getElementById("mensagemSolicitacao").textContent =
+            "Solicitação enviada com sucesso! Nossa equipe recebeu seus dados e entrará em contato em breve.";
+
+    } catch (erro) {
+        document.getElementById("mensagemSolicitacao").textContent =
+            "Não foi possível enviar a solicitação. Verifique se o JSON Server está ligado.";
     }
-
-    localStorage.setItem("servicosExtras", JSON.stringify(extras));
-    localStorage.setItem("servicosExcluidos", JSON.stringify(excluidos));
-    localStorage.setItem("servicosAlterados", JSON.stringify(alteracoes));
-
-    mostrarServicos();
 }
 
+// ENVIAR SUGESTÃO
+async function enviarSugestao(evento) {
+    evento.preventDefault();
 
-// INICIAR
+    const sugestao = {
+        nome: document.getElementById("nomeSugestao").value.trim(),
+        descricao: document.getElementById("descricaoSugestao").value.trim(),
+        status: "Pendente"
+    };
 
+    try {
+        const resposta = await fetch(API + "/sugestoes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(sugestao)
+        });
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao enviar sugestão");
+        }
+
+        formSugestao.reset();
+
+        document.getElementById("mensagemSugestao").textContent =
+            "Sugestão enviada com sucesso!";
+
+    } catch (erro) {
+        document.getElementById("mensagemSugestao").textContent =
+            "Não foi possível enviar sua sugestão. Verifique se o JSON Server está ligado.";
+    }
+}
+
+// EVENTOS DOS FORMULÁRIOS
+formSugestao.addEventListener("submit", enviarSugestao);
+formSolicitacao.addEventListener("submit", enviarSolicitacao);
+
+// INICIAR PÁGINA
 carregarServicos();

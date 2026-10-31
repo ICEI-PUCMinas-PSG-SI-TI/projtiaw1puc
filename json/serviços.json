@@ -1,16 +1,42 @@
 {
-    "servicos": [
-        {
-            "id": "1",
-            "nome": "Intérprete de Libras",
-            "descricao": "Profissional responsável pela interpretação do evento em Libras.",
-            "categoria": "Comunicação"
-        },
-        {
-            "id": "2",
-            "nome": "Legendas em tempo real",
-            "descricao": "Exibição das falas do evento em texto.",
-            "categoria": "Comunicação"
-        }
-    ]
+  "servicos": [
+    {
+      "id": "1",
+      "nome": "Intérprete de Libras",
+      "descricao": "Encontre profissionais de Libras para palestras, shows e apresentações culturais.",
+      "categoria": "Comunicação"
+    },
+    {
+      "id": "2",
+      "nome": "Legendas online",
+      "descricao": "Serviços de legendagem para vídeos, palestras e apresentações.",
+      "categoria": "Informação"
+    },
+    {
+      "id": "3",
+      "nome": "Tradutor de Libras online",
+      "descricao": "Soluções de tradução e comunicação em Libras pela internet.",
+      "categoria": "Comunicação"
+    }
+  ],
+  "sugestoes": [
+    {
+      "nome": "Lucas",
+      "descricao": "Queria muito encontrar a pesquisa de sinais.",
+      "status": "Pendente",
+      "id": "5nRcd2P4wJg"
+    }
+  ],
+  "solicitacoes": [
+    {
+      "servicoId": "1",
+      "servico": "Intérprete de Libras",
+      "nome": "Mariana Almeida",
+      "email": "Marianaalmeida12@gmail.com",
+      "telefone": "31 99568-8475",
+      "status": "Recebida",
+      "id": "nF8fIsZ18Tc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
