@@ -44,8 +44,24 @@
        "descricao": "Descrição da segunda notícia recente",
        "imagem": "Imagem de carrossel da segunda notícia"
         }
-    ]            
-}
+    ],
+   "cabeçalho": [ 
+   { 
+    "id":"3",
+    "nome": "cabeçalho e componentes", 
+    "especificação": "Cabeçalho com menu, barra de pesquisa, logo e sobre nós."
+    }
+],
+    "corpo": [ 
+    {
+    "id": "4",
+    "nome": "Conteúdo da página", 
+    "seções": "7", 
+    "navegações": ["Eventos, Serviços, Mapas, Trabalhe conosco, sobre nós, notícia, rodapé"]
+} 
+] 
+}            
+
 
 
     
