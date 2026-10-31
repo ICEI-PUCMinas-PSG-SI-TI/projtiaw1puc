@@ -45,15 +45,13 @@
             <li class="separator">|</li>
             <li>➕ Serviços</li>
             <li class="separator">|</li>
-            <li>🛒 Produtos</li>
-            <li class="separator">|</li>
             <li>📍 Mapas</li>
             <li class="separator">|</li>
             <li>👥 Trabalhe Conosco</li>
         </ul>
     </nav>
 
-    <!-- CONTEÚDO (COLUNA ESQUERDA + COLUNA DIREITA) -->
+    <!-- CONTEÚDO da (COLUNA ESQUERDA e COLUNA DIREITA) -->
     <div class="container">
         
         <!-- SIDEBAR DE FILTROS -->
@@ -100,81 +98,17 @@
             </div>
         </aside>
 
-        <!-- ÁREA DOS CARDS DE EVENTOS -->
+        <!-- PARTE DOS CARDS, EVENTOS -->
         <main class="events-section">
             <h2>Próximos Eventos Acessíveis</h2>
 
-            <div class="events-grid">
-                
-                <!-- CARD 1 -->
-                <div class="card">
-                    <div class="image-placeholder">
-                        <span class="badge">🤟</span>
-                        <div class="cam-icon">📷</div>
-                        <p>[IMAGEM DO EVENTO]</p>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Título:</strong> Conferência Acessibilidade na Tech</p>
-                        <p><strong>Data:</strong> 15/Out, 19h</p>
-                        <p><strong>Local:</strong> Online</p>
-                        <p><strong>Recursos de Acessibilidade:</strong> Intérprete Libras, Legendas</p>
-                    </div>
-                    <button class="btn-details">Ver Detalhes</button>
-                </div>
-
-                <!-- CARD 2 -->
-                <div class="card">
-                    <div class="image-placeholder">
-                        <span class="badge">💬</span>
-                        <div class="cam-icon">📷</div>
-                        <p>[IMAGEM DO EVENTO]</p>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Título:</strong> Workshop Libras para Iniciantes</p>
-                        <p><strong>Data:</strong> 22/Out, 14h</p>
-                        <p><strong>Local:</strong> Centro Cultural</p>
-                        <p><strong>Recursos:</strong> Intérprete Libras</p>
-                    </div>
-                    <button class="btn-details">Ver Detalhes</button>
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="card">
-                    <div class="image-placeholder">
-                        <span class="badge">🤟</span>
-                        <div class="cam-icon">📷</div>
-                        <p>[IMAGEM DO EVENTO]</p>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Título:</strong> Festival de Teatro Inclusivo</p>
-                        <p><strong>Data:</strong> 05/Nov, 18h30</p>
-                        <p><strong>Local:</strong> Teatro Municipal</p>
-                        <p><strong>Recursos de Acessibilidade:</strong> Intérprete Libras, Audiodescrição</p>
-                    </div>
-                    <button class="btn-details">Ver Detalhes</button>
-                </div>
-
-                <!-- CARD 4 -->
-                <div class="card">
-                    <div class="image-placeholder">
-                        <span class="badge">💬</span>
-                        <div class="cam-icon">📷</div>
-                        <p>[IMAGEM DO EVENTO]</p>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Título:</strong> Meetup Network Surdos em Tech</p>
-                        <p><strong>Data:</strong> 12/Nov, 11h</p>
-                        <p><strong>Local:</strong> Espaço Co-working</p>
-                        <p><strong>Recursos:</strong> Legendas (CART)</p>
-                    </div>
-                    <button class="btn-details">Ver Detalhes</button>
-                </div>
-
-            </div>
+            <!-- CARDS DO EVENTO SERÃO COLOCADOS AQUI PELO JAVASCRIPT -->
+            <DIV CLASS="events-grid" id="events-grid">
+            </DIV>
 
             <div class="events-footer">
-                <span>Total de Eventos: 12</span>
-                <span>Página 1 of 3</span>
+                <span id="total-eventos">total de eventos: 0</span>    
+                <span>Página 1 de 3</span>
             </div>
         </main>
 
