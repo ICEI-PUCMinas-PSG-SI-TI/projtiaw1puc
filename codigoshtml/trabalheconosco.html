@@ -8,6 +8,80 @@
     <script src="../codigosjavascript/trabalheconosco.js"></script>
 </head>
 <body>
-    teste
+    <header>
+        <div class="logo">
+            <h1>SIGNALS</h1>
+        </div>
+
+        <div class="header-right">
+            <input type="text" id="pesquisa" placeholder="Pesquise algo...">
+            <button id="menu-btn">☰</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Eventos</a>
+        <a href="#">Serviços</a>
+        <a href="#">Produtos</a>
+        <a href="#">Mapas</a>
+        <a href="#" class="ativo">Trabalhe Conosco</a>
+    </nav>
+
+    <main>
+
+        <aside class="home">
+            <button onclick="voltarInicio()">
+                 Voltar ao início
+            </button>
+        </aside>
+
+        <section class="conteudo">
+
+            <div class="texto">
+                <h2>Trabalhe conosco</h2>
+
+                <p>
+                    Junte-se a nós na construção de um futuro mais inclusivo,
+                    onde a informação e a participação cultural estejam ao
+                    alcance de todos!
+                </p>
+
+                <div class="botoes">
+                    <button onclick="mostrarVagas()">
+                        Conferir vagas
+                    </button>
+
+                    <button onclick="candidatar()">
+                        Candidate-se
+                    </button>
+
+                    <button onclick="abrirFAQ()">
+                        Dúvidas? FAQ
+                    </button>
+                </div>
+
+                <div id="resultado"></div>
+            </div>
+
+            <div class="galeria">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 SIGNALS. Todos os direitos reservados.
+    </footer>
 </body>
 </html>

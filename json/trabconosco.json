@@ -59,7 +59,41 @@
       "dataCandidatura": "2026-09-18",
       "status": "Aprovado para entrevista",
       "observacao": "Experiência compatível com a vaga."
+    },
+    {
+  "faq": [
+    {
+      "id": 1,
+      "categoria": "Vagas",
+      "pergunta": "Como me cadastrar para uma vaga?",
+      "resposta": "Acesse a página Trabalhe Conosco, selecione a vaga desejada e clique em Candidatar-se."
+    },
+    {
+      "id": 2,
+      "categoria": "Candidaturas",
+      "pergunta": "Como acompanhar minha candidatura?",
+      "resposta": "Entre em sua conta e consulte o menu Minhas Candidaturas."
+    },
+    {
+      "id": 3,
+      "categoria": "Cadastro",
+      "pergunta": "Posso alterar meus dados cadastrais?",
+      "resposta": "Sim. Acesse Perfil > Editar Dados e atualize as informações necessárias."
+    },
+    {
+      "id": 4,
+      "categoria": "Vagas",
+      "pergunta": "Onde visualizo as vagas disponíveis?",
+      "resposta": "Todas as oportunidades são exibidas na seção Conferir Vagas."
+    },
+    {
+      "id": 5,
+      "categoria": "Contato",
+      "pergunta": "Como entrar em contato com o RH?",
+      "resposta": "Utilize o formulário de contato ou envie um e-mail para rh@signals.com."
     }
+  ]
+}
   ]
 }
 
