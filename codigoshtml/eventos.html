@@ -1,123 +1,321 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Encontre eventos culturais e educacionais com recursos de acessibilidade.">
+
     <title>SIGNALS - Eventos</title>
-    <link rel="stylesheet" href="../codigocss/estiloeventos.css">  
- 
+
+    <link rel="stylesheet" href="../codigoscss/estiloeventos.css">
+    <script src="../codigosjavascript/eventos.js" defer></script>
 </head>
+
 <body>
 
     <!-- BARRA DO NAVEGADOR -->
-    <div class="browser-bar">
+    <div class="browser-bar" aria-hidden="true">
         <div class="browser-nav">
-            <button>&lt;</button>
-            <button>&gt;</button>
+            <button type="button" tabindex="-1">&lt;</button>
+            <button type="button" tabindex="-1">&gt;</button>
             <span class="url-box">🔒 https://www.signals.com/eventos</span>
         </div>
-        <div class="user-icon">👤</div>
+
+        <div class="user-icon">●</div>
     </div>
 
     <!-- CABEÇALHO -->
     <header class="main-header">
+
         <div class="header-left">
-            <a href="#">➤ Sobre Nós</a>
+            <a href="#conteudo">Sobre Nós</a>
         </div>
+
         <div class="header-center">
-            <h1>SIGNALS</h1>
-            <div class="libras-symbols">🤟👇👍☝️</div>
+            <a class="brand" href="#topo">SIGNALS</a>
+            <div class="libras-symbols">🤟 👇 👍 ☝️</div>
         </div>
+
         <div class="header-right">
-            <select><option>⌄</option></select>
+
             <div class="search-box">
-                <span>🔍</span>
-                <input type="text" placeholder="Pesquise algo...">
+                <span>⌕</span>
+
+                <input
+                    id="busca-header"
+                    type="search"
+                    placeholder="Pesquise eventos..."
+                    autocomplete="off">
             </div>
-            <button class="menu-btn">☰</button>
+
+            <button class="menu-btn" type="button">☰</button>
+
         </div>
+
     </header>
 
-    <!-- NAVEGAÇÃO PRINCIPAL -->
+    <!-- NAVEGAÇÃO -->
     <nav class="main-nav">
         <ul>
-            <li class="active">🌐 Eventos</li>
+            <li class="active">
+                <a href="#conteudo">🌐 Eventos</a>
+            </li>
+
             <li class="separator">|</li>
-            <li>➕ Serviços</li>
+
+            <li>
+                <a href="#servicos">➕ Serviços</a>
+            </li>
+
             <li class="separator">|</li>
-            <li>📍 Mapas</li>
+
+            <li>
+                <a href="#mapas">📍 Mapas</a>
+            </li>
+
             <li class="separator">|</li>
-            <li>👥 Trabalhe Conosco</li>
+
+            <li>
+                <a href="#trabalhe">👥 Trabalhe Conosco</a>
+            </li>
         </ul>
     </nav>
 
-    <!-- CONTEÚDO da (COLUNA ESQUERDA e COLUNA DIREITA) -->
-    <div class="container">
-        
-        <!-- SIDEBAR DE FILTROS -->
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container" id="conteudo">
+
+        <!-- FILTROS -->
         <aside class="sidebar">
+
             <h2>Filtros de Pesquisa</h2>
-            
+
+            <!-- BUSCA -->
             <div class="search-filter">
-                <span>🔍</span>
-                <input type="text" placeholder="Buscar por nome do evento...">
+
+                <span>⌕</span>
+
+                <input
+                    id="busca-eventos"
+                    type="search"
+                    placeholder="Buscar por nome do evento..."
+                    autocomplete="off">
+
             </div>
 
-            <div class="filter-section">
-                <h3>Recursos de Acessibilidade</h3>
-                <label><input type="checkbox"> Intérprete Libras</label>
-                <label><input type="checkbox"> Legendas (CART)</label>
-                <label><input type="checkbox"> Audiodescrição</label>
-            </div>
+            <!-- ACESSIBILIDADE -->
+            <fieldset class="filter-section">
 
+                <legend>Recursos de Acessibilidade</legend>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="recurso"
+                        value="Intérprete Libras">
+
+                    Intérprete Libras
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="recurso"
+                        value="Legendas (CART)">
+
+                    Legendas (CART)
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="recurso"
+                        value="Audiodescrição">
+
+                    Audiodescrição
+                </label>
+
+            </fieldset>
+
+            <!-- CATEGORIA -->
             <div class="filter-section">
-                <h3>Categoria</h3>
+
+                <label class="section-label" for="filtro-categoria">
+                    Categoria
+                </label>
+
                 <div class="select-wrapper">
-                    <select><option></option></select>
+
+                    <select id="filtro-categoria">
+
+                        <option value="">Todas as categorias</option>
+
+                    </select>
+
                 </div>
+
             </div>
 
-            <!-- DATAS AJUSTADAS IGUAL A IMAGEM -->
+            <!-- DATAS -->
             <div class="filter-section">
+
                 <div class="dates-container">
+
                     <div class="date-field-group">
-                        <label>Data</label>
-                        <div class="date-input-wrapper">
-                            <input type="text">
-                            <span class="calendar-btn">📅</span>
-                        </div>
+
+                        <label for="data-inicial">Data inicial</label>
+
+                        <input
+                            id="data-inicial"
+                            type="date">
+
                     </div>
+
                     <div class="date-field-group">
-                        <label>Data</label>
-                        <div class="date-input-wrapper">
-                            <input type="text">
-                            <span class="calendar-btn">📅</span>
-                        </div>
+
+                        <label for="data-final">Data final</label>
+
+                        <input
+                            id="data-final"
+                            type="date">
+
                     </div>
+
                 </div>
+
             </div>
+
+            <button
+                id="limpar-filtros"
+                class="clear-button"
+                type="button">
+
+                Limpar filtros
+
+            </button>
+
         </aside>
 
-        <!-- PARTE DOS CARDS, EVENTOS -->
+        <!-- EVENTOS -->
         <main class="events-section">
-            <h2>Próximos Eventos Acessíveis</h2>
 
-            <!-- CARDS DO EVENTO SERÃO COLOCADOS AQUI PELO JAVASCRIPT -->
-            <DIV CLASS="events-grid" id="events-grid">
-            </DIV>
+            <div class="section-heading">
 
-            <div class="events-footer">
-                <span id="total-eventos">total de eventos: 0</span>    
-                <span>Página 1 de 3</span>
+                <div>
+
+                    <p class="eyebrow">AGENDA INCLUSIVA</p>
+
+                    <h1>Próximos Eventos Acessíveis</h1>
+
+                </div>
+
+                <span class="accessibility-mark">♿</span>
+
             </div>
+
+            <!-- CONTADOR -->
+            <div class="results-line">
+
+                <span id="total-eventos">
+                    Carregando eventos...
+                </span>
+
+                <span id="pagina-atual">
+                    Página 1 de 1
+                </span>
+
+            </div>
+
+            <!-- CARDS -->
+            <div
+                class="events-grid"
+                id="events-grid">
+
+                <p class="loading-message">
+                    Carregando eventos...
+                </p>
+
+            </div>
+
+            <!-- PAGINAÇÃO -->
+            <div class="pagination">
+
+                <button
+                    id="pagina-anterior"
+                    type="button"
+                    disabled>
+
+                    Anterior
+
+                </button>
+
+                <button
+                    id="proxima-pagina"
+                    type="button"
+                    disabled>
+
+                    Próxima
+
+                </button>
+
+            </div>
+
         </main>
 
     </div>
 
     <!-- RODAPÉ -->
     <footer class="main-footer">
+
         <p>© 2026 SIGNALS. Todos os direitos reservados.</p>
+
+        <p>Dúvidas? signals@gmail.com.br | (31) 90000-0000</p>
+
     </footer>
+
+    <!-- JANELA DE DETALHES -->
+    <dialog id="modal-detalhes" class="details-dialog">
+
+        <div class="dialog-header">
+
+            <h2 id="modal-titulo">Detalhes do evento</h2>
+
+            <button
+                id="fechar-modal"
+                class="close-modal"
+                type="button">
+
+                ×
+
+            </button>
+
+        </div>
+
+        <div
+            id="conteudo-detalhes"
+            class="dialog-content">
+
+        </div>
+
+        <div class="dialog-actions">
+
+            <button
+                id="fechar-modal-rodape"
+                type="button"
+                class="primary-button">
+
+                Fechar
+
+            </button>
+
+        </div>
+
+    </dialog>
+
+    <!-- MENSAGEM DE ERRO -->
+    <div id="mensagem-api" class="api-message" hidden></div>
 
 </body>
 </html>
