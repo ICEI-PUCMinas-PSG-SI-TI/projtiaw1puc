@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 16px;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+input,
+button {
+    padding: 8px;
+    font: inherit;
+}
+
+#pesquisa {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 6px 0 16px;
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.local {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    text-align: left;
+    background: white;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+#detalhes {
+    margin-top: 16px;
+}
+
+#mapa {
+    position: relative;
+    min-height: 300px;
+    border: 1px solid #555;
+    background:
+        linear-gradient(90deg, transparent 48%, #aaa 49%, #aaa 52%, transparent 53%),
+        linear-gradient(0deg, transparent 48%, #aaa 49%, #aaa 52%, transparent 53%),
+        #eee;
+}
+
+.marcador {
+    position: absolute;
+    padding: 4px 7px;
+    border: 1px solid #333;
+    background: white;
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 3px solid #1769aa;
+}
+
+@media (max-width: 650px) {
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+}

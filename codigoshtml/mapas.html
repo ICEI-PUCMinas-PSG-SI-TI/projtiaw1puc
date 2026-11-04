@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapa cultural</title>
     <link rel="stylesheet" href="../codigoscss/estilomapas.css">
-    <script src="../codigosjavascript/mapas.js"></script>
+    <script src="../codigosjavascript/mapas.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>SIGNALS — Mapa cultural</h1>
+        <p>Encontre espaços culturais em Belo Horizonte.</p>
+    </header>
+
+    <main>
+        <label for="pesquisa">Pesquisar local</label>
+        <input id="pesquisa" type="search" placeholder="Digite o nome de um local">
+
+        <p id="mensagem" role="status">Carregando locais...</p>
+
+        <div class="conteudo">
+            <section>
+                <h2>Locais</h2>
+                <div id="lista-locais"></div>
+                <div id="detalhes"></div>
+            </section>
+
+            <section>
+                <h2>Mapa esquemático</h2>
+                <p>Posições ilustrativas, não use para navegação.</p>
+                <div id="mapa" aria-label="Mapa esquemático dos locais"></div>
+            </section>
+        </div>
+    </main>
 </body>
 </html>

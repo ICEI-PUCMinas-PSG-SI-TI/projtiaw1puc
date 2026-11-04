@@ -1,0 +1,31 @@
+{
+  "locais": [
+    {
+      "id": 1,
+      "nome": "Praça da Liberdade",
+      "bairro": "Savassi",
+      "cidade": "Belo Horizonte",
+      "recursosAcessibilidade": [],
+      "posicaoX": 20,
+      "posicaoY": 25
+    },
+    {
+      "id": 2,
+      "nome": "Palácio das Artes",
+      "bairro": "Centro",
+      "cidade": "Belo Horizonte",
+      "recursosAcessibilidade": [],
+      "posicaoX": 60,
+      "posicaoY": 40
+    },
+    {
+      "id": 3,
+      "nome": "Mercado Novo",
+      "bairro": "Centro",
+      "cidade": "Belo Horizonte",
+      "recursosAcessibilidade": [],
+      "posicaoX": 40,
+      "posicaoY": 70
+    }
+  ]
+}
