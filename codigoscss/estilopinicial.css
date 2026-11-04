@@ -30,7 +30,38 @@ h2{
     display: inline-block;
     text-align: center;
 }
+#backToTopBtn {
+    position : fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color:steelblue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+#backToTopBtn:hover {
+    background-color: #1e90ff;
+    transform: translateY(-4px);
+}
+#backToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.bg-gradient-azul {
+  background: linear-gradient(135deg, hsl(223, 100%, 65%) 0%, #1d5a97 50%, #0b2545 100%);
 
+}
 
 
 
