@@ -3,34 +3,56 @@
     {
       "id": 1,
       "titulo": "Conferência Acessibilidade na Tech",
+      "categoria": "Tecnologia",
       "data": "15/Out",
+      "dataISO": "2026-10-15",
       "horario": "19h",
       "local": "Online",
-      "recursosAcessibilidade": "Intérprete Libras, Legendas"
+      "descricao": "Conferência sobre acessibilidade, tecnologia e inclusão no ambiente digital.",
+      "recursosAcessibilidade": [
+        "Intérprete Libras",
+        "Legendas (CART)"
+      ]
     },
     {
       "id": 2,
       "titulo": "Workshop Libras para Iniciantes",
+      "categoria": "Educação",
       "data": "22/Out",
+      "dataISO": "2026-10-22",
       "horario": "14h",
       "local": "Centro Cultural",
-      "recursosAcessibilidade": "Intérprete Libras"
+      "descricao": "Atividade introdutória para conhecer expressões e fundamentos da Língua Brasileira de Sinais.",
+      "recursosAcessibilidade": [
+        "Intérprete Libras"
+      ]
     },
     {
       "id": 3,
       "titulo": "Festival de Teatro Inclusivo",
+      "categoria": "Cultura",
       "data": "05/Nov",
+      "dataISO": "2026-11-05",
       "horario": "18h30",
       "local": "Teatro Municipal",
-      "recursosAcessibilidade": "Intérprete Libras, Audiodescrição"
+      "descricao": "Apresentações de teatro com recursos de acessibilidade para ampliar a participação do público.",
+      "recursosAcessibilidade": [
+        "Intérprete Libras",
+        "Audiodescrição"
+      ]
     },
     {
       "id": 4,
       "titulo": "Meetup Network Surdos em Tech",
+      "categoria": "Networking",
       "data": "12/Nov",
+      "dataISO": "2026-11-12",
       "horario": "11h",
       "local": "Espaço Co-working",
-      "recursosAcessibilidade": "Legendas (CART)"
+      "descricao": "Encontro de networking e troca de experiências entre profissionais e interessados em tecnologia.",
+      "recursosAcessibilidade": [
+        "Legendas (CART)"
+      ]
     }
   ]
 }
