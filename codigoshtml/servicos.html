@@ -1,113 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços de acessibilidade</title>
+    <title>SIGNALS - Serviços de acessibilidade</title>
     <link rel="stylesheet" href="../codigoscss/estiloservicos.css">
-        <link rel="icon" type="image/png" href="../img/Logomarca.png">
 </head>
+
 <body>
     <header>
         <div class="topo">
             <h1>SIGNALS</h1>
         </div>
     </header>
+
     <main>
         <section class="introducao">
             <h2>Encontre serviços de acessibilidade</h2>
             <p>Conheça soluções e profissionais que ajudam a tornar eventos culturais mais acessíveis para pessoas surdas.</p>
         </section>
+
         <section id="catalogo" class="secao">
             <div class="titulo-secao">
                 <h2>Alguns serviços de acessibilidade</h2>
                 <p>Conheça alguns exemplos de serviços que ajudam a tornar os eventos mais inclusivos.</p>
             </div>
+
+            <!-- NOVA FUNCIONALIDADE: PESQUISA E FILTROS -->
+            <div class="filtros">
+                <div class="campo-filtro">
+                    <label for="pesquisaServico">Pesquisar serviço</label>
+                    <input
+                        type="search"
+                        id="pesquisaServico"
+                        placeholder="Digite o nome do serviço..."
+                    >
+                </div>
+
+                <div class="campo-filtro">
+                    <label for="filtroCategoria">Filtrar por categoria</label>
+                    <select id="filtroCategoria">
+                        <option value="">Todas as categorias</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="resultadoPesquisa" class="resultado-pesquisa" aria-live="polite"></p>
+
             <div class="servicos-destaque">
                 <article class="card-destaque">
-                    <img src="/projtiaw1puc/img/Intérprete de Libras em Ação.png"
-                        alt="Ilustração de intérprete de Libras">
+                    <img src="../img/Intérprete de Libras em Ação.png.png" alt="Intérprete de Libras em evento">
                     <div class="card-destaque-conteudo">
                         <h3>Contrate intérpretes para eventos</h3>
                         <p>Encontre profissionais de Libras para palestras, shows e apresentações culturais.</p>
-                        <button type="button" class="botaoContratar" data-id="1">
-                            Quero contratar
-                        </button>
+                        <button type="button" class="botaoContratar" data-id="1">Quero contratar</button>
                     </div>
                 </article>
+
                 <article class="card-destaque">
-                    <img src="/projtiaw1puc/img/Legendas online para todos.png"
-                        alt="Ilustração de tela com legendas">
+                    <img src="../img/legendass.png" alt="Ilustração de tela com legendas">
                     <div class="card-destaque-conteudo">
                         <h3>Legendas online</h3>
                         <p>Serviços de legendagem para vídeos, palestras e apresentações.</p>
-                        <button type="button" class="botaoContratar" data-id="2">
-                            Quero contratar
-                        </button>
+                        <button type="button" class="botaoContratar" data-id="2">Quero contratar</button>
                     </div>
                 </article>
+
                 <article class="card-destaque">
-                    <img src="/projtiaw1puc/img/Tradutor de Libras online.png"
-                        alt="Ilustração de tradução onlinee">
+                    <img src="../img/tradutor de libras.png" alt="Ilustração de tradução online">
                     <div class="card-destaque-conteudo">
                         <h3>Tradutor de Libras online</h3>
                         <p>Encontre soluções de tradução e comunicação em Libras pela internet.</p>
-                        <button type="button" class="botaoContratar" data-id="3">
-                            Quero contratar
-                        </button>
+                        <button type="button" class="botaoContratar" data-id="3">Quero contratar</button>
                     </div>
                 </article>
             </div>
         </section>
+
         <div class="separador"></div>
+
         <section id="sugestoes" class="secao caixa">
             <h2>Não encontrou o serviço que procura?</h2>
             <p>Conte para nós qual serviço de acessibilidade você gostaria de encontrar no SIGNALS.</p>
+
             <form id="formSugestao">
                 <label for="nomeSugestao">Seu nome (opcional)</label>
-                <input type="text" id="nomeSugestao"
-                    placeholder="Como podemos chamar você?">
+                <input type="text" id="nomeSugestao" placeholder="Como podemos chamar você?">
+
                 <label for="descricaoSugestao">Qual serviço você gostaria de encontrar?</label>
-                <textarea id="descricaoSugestao" rows="4"
-                    placeholder="Descreva sua sugestão..." required></textarea>
+                <textarea id="descricaoSugestao" rows="4" placeholder="Descreva sua sugestão..." required></textarea>
+
                 <button type="submit">Enviar sugestão</button>
             </form>
+
             <p id="mensagemSugestao" class="mensagem" aria-live="polite"></p>
         </section>
     </main>
+
+    <!-- MODAL DE CONTRATAÇÃO -->
     <div id="modalDetalhes" class="modal" hidden>
         <div class="modal-conteudo">
-            <button type="button" id="fecharModal" class="fechar"
-                aria-label="Fechar">×</button>
+            <button type="button" id="fecharModal" class="fechar" aria-label="Fechar">×</button>
+
             <div id="conteudoDetalhes"></div>
+
             <form id="formSolicitacao">
                 <h3>Solicitar contratação</h3>
+
                 <input type="hidden" id="idSolicitado">
                 <p id="servicoEscolhido"></p>
+
                 <label for="nomeSolicitante">Nome completo</label>
-                <input type="text" id="nomeSolicitante"
-                    placeholder="Digite seu nome" required>
+                <input type="text" id="nomeSolicitante" placeholder="Digite seu nome" required>
+
                 <label for="emailSolicitante">E-mail</label>
-                <input type="email" id="emailSolicitante"
-                    placeholder="Digite seu e-mail" required>
+                <input type="email" id="emailSolicitante" placeholder="Digite seu e-mail" required>
+
                 <label for="telefoneSolicitante">Telefone</label>
-                <input type="tel" id="telefoneSolicitante"
-                    placeholder="(31) 99999-9999" required>
+                <input type="tel" id="telefoneSolicitante" placeholder="(31) 99999-9999" required>
+
                 <button type="submit">Enviar solicitação</button>
-                <p id="mensagemSolicitacao" class="mensagem"
-                    aria-live="polite"></p>
+
+                <p id="mensagemSolicitacao" class="mensagem" aria-live="polite"></p>
             </form>
         </div>
     </div>
-    <hr>
-    <div class="rodape">
-<footer class="text-center py-3 mt-auto" style="text-align: center; background-color: rgb(16, 45, 212); color: white;">
-     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';"> Dúvidas? Entre em contato conosco, pelo email: signals@gmail.com.br</h4>
-     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">Ou pelo número: (31)90000-0000</h4>
-      <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">© 2026 SIGNALS. Todos os direitos reservardos.</h4>
-     </div>
-</div>
+
+    <footer>
+        <p>SIGNALS — Acessibilidade e inclusão em eventos culturais.</p>
     </footer>
-    <script src="../codigosjavascript/servicos.js"></script>
+
+    <script src="servicos.js"></script>
 </body>
 </html>

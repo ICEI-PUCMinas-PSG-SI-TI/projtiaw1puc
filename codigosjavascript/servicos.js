@@ -1,10 +1,105 @@
-const API = "http://localhost:3000";
+
+const API = "http://localhost:3001";
 
 const formSugestao = document.getElementById("formSugestao");
 const formSolicitacao = document.getElementById("formSolicitacao");
 const modal = document.getElementById("modalDetalhes");
 
 let servicos = [];
+
+// ELEMENTOS DA NOVA FUNCIONALIDADE
+const campoPesquisa = document.getElementById("pesquisaServico");
+const campoCategoria = document.getElementById("filtroCategoria");
+const textoResultado = document.getElementById("resultadoPesquisa");
+
+// NORMALIZAR TEXTO PARA IGNORAR ACENTOS E MAIÚSCULAS
+function normalizarTexto(texto) {
+    return String(texto)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+
+// CARREGAR CATEGORIAS NO FILTRO
+function carregarCategorias() {
+    const categorias = [...new Set(
+        servicos.map(function (servico) {
+            return servico.categoria;
+        })
+    )];
+
+    categorias.forEach(function (categoria) {
+        const opcao = document.createElement("option");
+
+        opcao.value = categoria;
+        opcao.textContent = categoria;
+
+        campoCategoria.appendChild(opcao);
+    });
+}
+
+// PESQUISAR E FILTRAR SERVIÇOS
+function filtrarServicos() {
+    const termo = normalizarTexto(campoPesquisa.value.trim());
+    const categoriaSelecionada = campoCategoria.value;
+
+    const cards = document.querySelectorAll(".card-destaque");
+
+    let quantidadeEncontrada = 0;
+
+    cards.forEach(function (card) {
+
+        const botao = card.querySelector(".botaoContratar");
+        const idServico = botao.dataset.id;
+
+        const servico = servicos.find(function (item) {
+            return String(item.id) === String(idServico);
+        });
+
+        if (!servico) {
+            card.hidden = true;
+            return;
+        }
+
+        const nome = normalizarTexto(servico.nome);
+        const descricao = normalizarTexto(servico.descricao);
+        const categoria = normalizarTexto(servico.categoria);
+
+        const correspondePesquisa =
+            nome.includes(termo) ||
+            descricao.includes(termo) ||
+            categoria.includes(termo);
+
+        const correspondeCategoria =
+            !categoriaSelecionada ||
+            servico.categoria === categoriaSelecionada;
+
+        if (correspondePesquisa && correspondeCategoria) {
+            card.hidden = false;
+            quantidadeEncontrada++;
+        } else {
+            card.hidden = true;
+        }
+    });
+
+    // MOSTRAR QUANTIDADE DE RESULTADOS
+    if (quantidadeEncontrada === 0) {
+        textoResultado.textContent =
+            "Nenhum serviço encontrado. Tente outra pesquisa ou categoria.";
+
+    } else if (quantidadeEncontrada === 1) {
+        textoResultado.textContent = "1 serviço encontrado.";
+
+    } else {
+        textoResultado.textContent =
+            quantidadeEncontrada + " serviços encontrados.";
+    }
+}
+
+// EVENTOS DA PESQUISA E DO FILTRO
+campoPesquisa.addEventListener("input", filtrarServicos);
+campoCategoria.addEventListener("change", filtrarServicos);
+
 
 // CARREGAR SERVIÇOS
 async function carregarServicos() {
@@ -16,6 +111,12 @@ async function carregarServicos() {
         }
 
         servicos = await resposta.json();
+
+        // CARREGAR AS CATEGORIAS DO JSON
+        carregarCategorias();
+
+        // ATUALIZAR RESULTADOS
+        filtrarServicos();
 
         // ATIVAR BOTÕES DE CONTRATAÇÃO
         const botoesContratar = document.querySelectorAll(".botaoContratar");
@@ -30,6 +131,7 @@ async function carregarServicos() {
         alert("Não foi possível carregar os serviços. Verifique se o JSON Server está ligado.");
     }
 }
+
 
 // ABRIR FORMULÁRIO
 function abrirDetalhes(id) {
@@ -54,6 +156,7 @@ function abrirDetalhes(id) {
     modal.hidden = false;
 }
 
+
 // FECHAR FORMULÁRIO
 document.getElementById("fecharModal").addEventListener("click", function () {
     modal.hidden = true;
@@ -64,6 +167,7 @@ modal.addEventListener("click", function (evento) {
         modal.hidden = true;
     }
 });
+
 
 // ENVIAR SOLICITAÇÃO
 async function enviarSolicitacao(evento) {
@@ -102,6 +206,7 @@ async function enviarSolicitacao(evento) {
     }
 }
 
+
 // ENVIAR SUGESTÃO
 async function enviarSugestao(evento) {
     evento.preventDefault();
@@ -136,9 +241,11 @@ async function enviarSugestao(evento) {
     }
 }
 
+
 // EVENTOS DOS FORMULÁRIOS
 formSugestao.addEventListener("submit", enviarSugestao);
 formSolicitacao.addEventListener("submit", enviarSolicitacao);
+
 
 // INICIAR PÁGINA
 carregarServicos();
