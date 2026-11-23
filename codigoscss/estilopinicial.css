@@ -1,6 +1,10 @@
 .cabecalho {
-    background-color: #3547e6;
+    background-color: rgb(6, 18, 103);
     padding: 15px;
+}
+#offcanvasDarkNavbar {
+  background-color: rgb(6, 18, 103) !important;
+  color: #ffffff;
 }
 h1 {
     color: #000000;
@@ -18,9 +22,12 @@ h2{
 .rodape{
     display: flex;
     flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(6, 18, 103);
 }
 .tituloprincipal{
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
 .imagemcabec{
     width: 60px;
@@ -29,6 +36,7 @@ h2{
 .navegacoes{
     display: inline-block;
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
 #backToTopBtn {
     position : fixed;
@@ -58,110 +66,64 @@ h2{
     opacity: 1;
     visibility: visible;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.imagemcabec{
+    scale: 1;
+    rotate: 0deg;
+    transition: scale 0.25s ease-in-out, rotate 0.25s ease-in-out;
+}
+.imagemcabec:hover,
+.navbar-brand:hover .imagemcabec{
+    scale: 1.15;
+    rotate: -8deg;
+}
+.logo-abaixo{
+    display: flex;
+  align-items: flex-end; 
+  justify-content: flex-start; 
+  gap: 20px;
+  padding: 20px;
+}
+.typewriter-effect {
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: calc(1.3rem + 0.6vw); 
+  font-weight: 500;  
+  line-height: 1.2;
+}
+.typewriter-effect > .text {
+  max-width: 0;
+  animation: typing 6s steps(100) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typewriter-effect::after {
+  content: " |";
+  animation: blink 1s infinite;
+  animation-timing-function: step-end;
+}
+@keyframes typing {
+  75%,
+  100% {
+    max-width: 100ch;
+  }
+}
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+.text, .sobre{
+    font-family: "Times New Roman", Times, serif;
+}
+.button-grow {
+  transition: all 0.3s ease-in-out;
+}
+.button-grow:hover {
+  transform: scale(1.1);
+}

@@ -12,29 +12,74 @@
     <script src="../codigosjavascript/paginicial.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
-<body class="d-flex flex-column min-vh-100 bg-gradient-azul">
+<body class="d-flex flex-column min-vh-100">
 <header class="cabecalho position-relative p-3" style="height: 80px;">
   <div class="tituloprincipal">
-    <img src="../img/Logomarca.png" class="position-absolute start-0 top-50 translate-middle-y ms-3 imagemcabec" alt="Logomarca da SIGNALS">
+   <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+  <img 
+    src="../img/Logomarca.png" 
+    alt="Logo Signals" 
+    width="50" 
+    height="60" 
+    class="position-absolute start-0 top-50 translate-middle-y ms-3 imagemcabec d-inline-block"
+  >
+</a>
+    </div>
     <h2 style="color: #ffffff;" class="ms-5 ps-4 m-0">SIGNALS</h2>
   </div>
-
-  <nav class="navbar position-absolute end-0 top-50 translate-middle-y me-3" style="right: 15px !important;">
-    <div class="container-fluid p-0">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-     
-      
-  <form class="position-absolute top-50 translate-middle-y m-0" role="search" style="right: 75px;">
-    <div class="input-group input-group-sm" style="width: 170px;">
-      <span class="input-group-text bg-white border-end-0"></span>
-      <input class="form-control border-start-0 ps-0" type="search" placeholder="Navegação..." aria-label="Search">
-      <button class="btn" type="submit" style="background-color: rgb(89, 99, 251); color: #fff;">Pesquisar</button>
+  <nav  class="navbar navbar-dark position-absolute top-0 end-0 m-2" >
+  <div class="container-fluid p-0">
+    <button class="navbar-toggler" 
+    type="button" data-bs-toggle="offcanvas" 
+    data-bs-target="#offcanvasDarkNavbar" 
+    aria-controls="offcanvasDarkNavbar" 
+    aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" 
+    tabindex="-1" 
+    id="offcanvasDarkNavbar" 
+    aria-labelledby="offcanvasDarkNavbarLabel" 
+    style="background-color: rgb(6, 18, 103);"
+       >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu de navegação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Página inicial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mais opções...
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Dúvidas sobre serviços</a></li>
+              <li><a class="dropdown-item" href="#">Dúvidas sobre navegar em eventos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Casos de sucesso</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquise algo aqui" aria-label="Search"/>
+          <button class="btn btn-success" type="submit" style="background-color: rgb(3, 11, 71);">Pesquisar</button>
+        </form>
+      </div>
     </div>
-  </form>
+  </div>
+</nav>
   <div class="dropdown position-absolute top-50 translate-middle-y" style="right: 260px;">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:rgb(4, 19, 134)">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:rgb(6, 18, 103)">
     </button>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Eventos</a></li>
@@ -46,30 +91,91 @@
   <main class="flex-grow-1 container my-4">
    <nav class="d-flex justify-content-center align-items-center gap-4 py-3">
     <div class="navegacoescabecalho">
-       <button style="background-color:rgb(89, 99, 251); border: none; border-radius: 5px;  box-shadow:0 4px 12px rgba(0, 0, 0, 0.3); " ><a href="eventos.html" class="text-decoration-none text-dark fw-bold fs-5"><h2 onmouseover="this.style.color='white';" onmouseout= "this.style.color='black';">Eventos</h2></a></button>
-       <button style="background-color:rgb(89, 99, 251); border: none; border-radius: 5px;  box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" ><a href="servicos.html" class="text-decoration-none text-dark fw-bold fs-5"><h2 onmouseover="this.style.color='white';" onmouseout= "this.style.color='black';">Serviços</h2></a></button>
-       <button style="background-color:rgb(89, 99, 251); border: none; border-radius: 5px;  box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" ><a href="mapas.html" class="text-decoration-none text-dark fw-bold fs-5"><h2 onmouseover="this.style.color='white';" onmouseout= "this.style.color='black';">Mapas</h2></a></button>
-       <button style="background-color:rgb(89, 99, 251); border: none; border-radius: 5px;  box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" ><a href="trabalheconosco.html" class="text-decoration-none text-dark fw-bold fs-5"><h2 onmouseover="this.style.color='white';" onmouseout= "this.style.color='black';">Trabalhe Conosco</h2></a></button>
-       <button style="background-color:rgb(89, 99, 251); border: none; border-radius: 5px;  box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" ><a href="contato.html" class="text-decoration-none text-dark fw-bold fs-5"><h2 onmouseover="this.style.color='white';" onmouseout= "this.style.color='black';">Contato</h2></a></button>
+       <button class="button-grow"
+       style=" 
+       background-color: rgb(6, 18, 103);
+       border: none; 
+       border-radius: 5px;  
+       box-shadow:0 4px 12px rgba(0, 0, 0, 0.3); " >
+        <a href="eventos.html" class="text-decoration-none text-dark fw-bold fs-5">
+          <h2 style="font-family: Times New Roman", Times, serif;
+          onmouseover="this.style.color='white';" 
+          onmouseout= "this.style.color='black';">
+          Eventos
+        </h2>
+      </a>
+      </button>
+       <button class="button-grow"
+       style="
+       background-color: rgb(6, 18, 103);
+       border: none; border-radius: 5px;  
+       box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);">
+       <a href="servicos.html" class="text-decoration-none text-dark fw-bold fs-5">
+        <h2 style="font-family: Times New Roman", Times, serif;
+        onmouseover="this.style.color='white';" 
+        onmouseout= "this.style.color='black';">
+        Serviços
+      </h2>
+    </a>
+  </button>
+       <button class="button-grow"
+       style="
+       background-color: rgb(6, 18, 103);
+       border: none; border-radius: 5px;  
+       box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" >
+       <a href="mapas.html" class="text-decoration-none text-dark fw-bold fs-5">
+        <h2 style="font-family: Times New Roman", Times, serif; 
+        onmouseover="this.style.color='white';" 
+        onmouseout= "this.style.color='black';">
+        Mapas
+      </h2>
+    </a>
+  </button>
+       <button class="button-grow"
+       style=" 
+       background-color: rgb(6, 18, 103);
+       border: none; border-radius: 5px;  
+       box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);">
+       <a href="trabalheconosco.html" class="text-decoration-none text-dark fw-bold fs-5">
+        <h2 style="font-family: Times New Roman", Times, serif;
+        onmouseover="this.style.color='white';" 
+        onmouseout= "this.style.color='black';">
+        Trabalhe Conosco
+      </h2>
+    </a>
+  </button>
+       <button class="button-grow"
+       style="
+       background-color: rgb(6, 18, 103);
+       border: none; border-radius: 5px;  
+       box-shadow:0 4px 12px rgba(0, 0, 0, 0.3);" >
+       <a href="contato.html" class="text-decoration-none text-dark fw-bold fs-5">
+        <h2 style="font-family: Times New Roman", Times, serif;
+        onmouseover="this.style.color='white';" 
+        onmouseout= "this.style.color='black';">
+        Contato
+      </h2>
+    </a>
+  </button>
     </div>
    </nav>
    <hr>
-   <h1>Seja bem vindo ao site SIGNALS!</h1>
+   <h1 style="font-family:Times New Roman, Times, serif;">Seja bem vindo(a) ao SIGNALS!</h1>
     </main>
 <main class="flex-grow-1 container my-4">
-  <h2>Eventos recentes</h2>
+  <h2 style="font-family:Times New Roman, Times, serif;">Eventos recentes</h2>
   <div class="row g-4">
     <div class="col-12 col-md-7">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../img/Logomarca.png" class="d-block w-100" alt="Primeira imagem de eventos">
+            <img src="../img/evento1.jpg" class="d-block w-100" alt="Primeira imagem de eventos">
           </div>
           <div class="carousel-item">
-            <img src="../img/Logomarca.png" class="d-block w-100" alt="Segunda imagem de eventos">
+            <img src="../img/evento2.jpg" class="d-block w-100" alt="Segunda imagem de eventos">
           </div>
           <div class="carousel-item">
-            <img src="../img/Logomarca.png" class="d-block w-100" alt="Terceira imagem de eventos">
+            <img src="../img/evento3.jpeg" class="d-block w-100" alt="Terceira imagem de eventos">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -82,9 +188,8 @@
         </button>
       </div>
     </div>
-
     <div class="col-12 col-md-5">
-      <h3 class="mb-3">Notícias recentes</h3>
+      <h3 class="mb-3" style="font-family:Times New Roman, Times, serif;">Notícias recentes</h3>
       <div class="card p-3 mb-3">
         <p class="m-0">Espaço para a primeira notícia...</p>
       </div>
@@ -93,14 +198,52 @@
       </div>
     </div>
   </div>
+<hr>
+  <div class="typewriter-effect">
+  <div class="text" id="typewriter-text">
+    Sobre a aplicação SIGNALS
+  </div>
+</div>
+  <h4 class="sobre">O Signals foi criado por uma equipe de desenvolvedores que visavam
+    a inclusão do público em eventos culturais que contém pessoas com algum nível de deficiência auditiva,
+    principalmente aqueles que necessitem de auxílios externos como tecnologias assistivas. Sejam estas legendas,
+    assistentes virtuais e intérpretes de LIBRAS, nossa missão é fazer com que esse público sinta
+    que pertençam à esses eventos e possam também atuar ativamente neles, podendo realizar palestras, 
+    influenciar  e inspirar a outras pessoas que participem dessas iniciativas nestes espaços. 
+    Afinal, este público merece cada vez mais integração e reconhecimento nos espaços voltados ao lazer.
+  </h4>
+<div class="typewriter-effect">
+  <div class="text" id="typewriter-text2">
+    A importância das tecnologias e da LIBRAS para o nosso público em eventos
+    culturais
+  </div>
+</div>
+<h4 class="sobre">
+Esses dois fatores somados permite esse público entender letras de músicas, 
+falas de artistas, peças teatrais, visitas mediadas e contações de histórias.
+Além disso, cumpre normas de acessibilidade,garante participação 
+igualitária em espaços públicos e privados e cria ambientes culturais mais 
+acolhedores
+ e respeitosos para todos os públicos.
+</h4>
 </main>
     <hr>
     <div class="rodape">
-<footer class="text-center py-3 mt-auto" style="text-align: center; background-color: rgb(16, 45, 212); color: white;">
+<footer class="position-relative text-center py-3 mt-auto" 
+style="text-align: center;  
+color: white;"
+>
+<div class="logo-abaixo">
+<img 
+    src="../img/Logomarca.png" 
+    alt="Logo Signals" 
+    width="200" 
+    height="200" 
+    >
+     </div>
      <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';"> Dúvidas? Entre em contato conosco, pelo email: signals@gmail.com.br</h4>
      <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">Ou pelo número: (31)90000-0000</h4>
       <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">© 2026 SIGNALS. Todos os direitos reservardos.</h4>
-     </div>
 </div>
     </footer>
     <button id="backToTopBtn" aria-label="Voltar ao topo" >
@@ -111,7 +254,7 @@
     <script src="paginicial.js">
 const backToTopBtn = document.getElementById('backToTopBtn');
  window.addEventListener('scroll', () => {
-        if(window.scrollY > 3){
+        if(window.scrollY > 1){
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
