@@ -1,3 +1,5 @@
+*{
+     font-family: "Times New Roman", Times, serif;
 :root {
     --blue: #102dd4;
     --blue-dark: #0b1e91;
@@ -8,32 +10,19 @@
     --white: #fff;
     --radius: 12px;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
     background: #fff;
     color: var(--ink);
     min-height: 100vh;
 }
-
 button,
 input,
 select {
     font: inherit;
 }
-
 button {
     cursor: pointer;
 }
-
-/* BARRA DO NAVEGADOR */
-
 .browser-bar {
     display: flex;
     justify-content: space-between;
@@ -43,14 +32,12 @@ button {
     background: #f7f7f8;
     color: #30343b;
 }
-
 .browser-nav {
     display: flex;
     align-items: center;
     gap: 8px;
     width: 90%;
 }
-
 .browser-nav button {
     border: 1px solid #c4c8d0;
     border-radius: 5px;
@@ -58,7 +45,6 @@ button {
     padding: 2px 9px;
     color: #333;
 }
-
 .url-box {
     display: inline-block;
     width: min(560px, 80%);
@@ -69,9 +55,6 @@ button {
     color: #555;
     font-size: 12px;
 }
-
-/* CABEÇALHO */
-
 .main-header {
     min-height: 116px;
     padding: 16px clamp(16px, 4vw, 52px);
@@ -81,17 +64,14 @@ button {
     gap: 12px;
     border-bottom: 1px solid var(--line);
 }
-
 .header-left a {
     color: var(--ink);
     text-decoration: none;
     font-size: 14px;
 }
-
 .header-center {
     text-align: center;
 }
-
 .brand {
     color: var(--blue);
     text-decoration: none;
@@ -99,20 +79,17 @@ button {
     font-weight: 800;
     letter-spacing: 3px;
 }
-
 .libras-symbols {
     margin-top: 2px;
     color: var(--blue-dark);
     font-size: 17px;
 }
-
 .header-right {
     justify-self: end;
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
 .search-box {
     display: flex;
     align-items: center;
@@ -122,28 +99,22 @@ button {
     padding: 7px 10px;
     background: #fff;
 }
-
 .search-box input {
     width: 160px;
     border: 0;
     outline: 0;
     font-size: 13px;
 }
-
 .menu-btn {
     background: transparent;
     border: 0;
     font-size: 25px;
     color: #252b38;
 }
-
-/* NAVEGAÇÃO */
-
 .main-nav {
     background: var(--blue);
     color: #fff;
 }
-
 .main-nav ul {
     min-height: 48px;
     display: flex;
@@ -154,25 +125,19 @@ button {
     list-style: none;
     padding: 10px 14px;
 }
-
 .main-nav a {
     text-decoration: none;
     color: #fff;
     font-size: 14px;
 }
-
 .main-nav li.active a {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 5px;
 }
-
 .main-nav .separator {
     opacity: .65;
 }
-
-/* CONTEÚDO */
-
 .container {
     width: min(1180px, calc(100% - 36px));
     margin: 32px auto 38px;
@@ -181,21 +146,16 @@ button {
     gap: 30px;
     align-items: start;
 }
-
-/* FILTROS */
-
 .sidebar {
     padding: 20px;
     background: var(--soft);
     border: 1px solid var(--line);
     border-radius: var(--radius);
 }
-
 .sidebar h2 {
     font-size: 19px;
     margin-bottom: 18px;
 }
-
 .search-filter {
     display: flex;
     gap: 8px;
@@ -206,12 +166,10 @@ button {
     padding: 9px 10px;
     margin-bottom: 22px;
 }
-
 .search-filter span {
     font-size: 19px;
     color: var(--muted);
 }
-
 .search-filter input {
     min-width: 0;
     width: 100%;
@@ -219,14 +177,12 @@ button {
     outline: 0;
     font-size: 12px;
 }
-
 .filter-section {
     border: 0;
     margin: 0 0 22px;
     padding: 0;
     min-width: 0;
 }
-
 .filter-section legend,
 .section-label {
     display: block;
@@ -234,7 +190,6 @@ button {
     font-size: 14px;
     font-weight: 700;
 }
-
 .filter-section label:not(.section-label) {
     display: flex;
     align-items: center;
@@ -243,13 +198,11 @@ button {
     font-size: 13px;
     line-height: 1.35;
 }
-
 .filter-section input[type="checkbox"] {
     accent-color: var(--blue);
     width: 15px;
     height: 15px;
 }
-
 .select-wrapper select,
 .date-field-group input {
     width: 100%;
@@ -259,25 +212,21 @@ button {
     padding: 9px 8px;
     font-size: 12px;
 }
-
 .dates-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 9px;
 }
-
 .date-field-group label {
     display: block;
     margin-bottom: 7px;
     font-size: 12px;
     font-weight: 700;
 }
-
 .date-field-group input {
     font-size: 11px;
     padding: 8px 5px;
 }
-
 .clear-button {
     width: 100%;
     padding: 10px;
@@ -288,17 +237,12 @@ button {
     font-size: 13px;
     font-weight: 700;
 }
-
 .clear-button:hover {
     background: #edf0ff;
 }
-
-/* EVENTOS */
-
 .events-section {
     min-width: 0;
 }
-
 .section-heading {
     display: flex;
     justify-content: space-between;
@@ -306,7 +250,6 @@ button {
     gap: 12px;
     margin: 1px 0 16px;
 }
-
 .eyebrow {
     color: var(--blue);
     font-size: 10px;
@@ -314,12 +257,10 @@ button {
     letter-spacing: 1.4px;
     margin-bottom: 6px;
 }
-
 .section-heading h1 {
     font-size: clamp(21px, 3vw, 27px);
     line-height: 1.2;
 }
-
 .accessibility-mark {
     width: 42px;
     height: 42px;
@@ -330,7 +271,6 @@ button {
     color: var(--blue);
     font-size: 22px;
 }
-
 .results-line {
     display: flex;
     justify-content: space-between;
@@ -339,15 +279,11 @@ button {
     color: var(--muted);
     font-size: 12px;
 }
-
 .events-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 17px;
 }
-
-/* CARDS */
-
 .card {
     display: flex;
     flex-direction: column;
@@ -358,7 +294,6 @@ button {
     background: #fff;
     box-shadow: 0 3px 12px rgba(22, 32, 65, .06);
 }
-
 .image-placeholder {
     min-height: 112px;
     position: relative;
@@ -369,18 +304,15 @@ button {
     color: #52609b;
     padding: 16px;
 }
-
 .image-placeholder .cam-icon {
     font-size: 26px;
     margin-bottom: 5px;
 }
-
 .image-placeholder p {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .4px;
 }
-
 .resource-badge {
     position: absolute;
     top: 10px;
@@ -397,20 +329,17 @@ button {
     font-size: 15px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .12);
 }
-
 .card-body {
     flex: 1;
     padding: 14px;
     font-size: 12px;
     line-height: 1.45;
 }
-
 .card-body h3 {
     margin-bottom: 10px;
     font-size: 15px;
     line-height: 1.3;
 }
-
 .card-body p {
     margin: 5px 0;
     color: #454b57;
@@ -419,14 +348,12 @@ button {
 .card-body strong {
     color: #171b25;
 }
-
 .resource-list {
     margin-top: 8px;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
-
 .resource-chip {
     display: inline-block;
     padding: 4px 7px;
@@ -436,7 +363,6 @@ button {
     font-size: 10px;
     font-weight: 700;
 }
-
 .btn-details {
     margin: 0 14px 14px;
     border: 0;
@@ -447,14 +373,10 @@ button {
     font-weight: 700;
     font-size: 12px;
 }
-
 .btn-details:hover,
 .primary-button:hover {
     background: var(--blue-dark);
 }
-
-/* ESTADOS E PAGINAÇÃO */
-
 .loading-message,
 .empty-state {
     grid-column: 1 / -1;
@@ -465,14 +387,12 @@ button {
     color: var(--muted);
     font-size: 14px;
 }
-
 .pagination {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
 }
-
 .pagination button {
     border: 1px solid var(--blue);
     border-radius: 6px;
@@ -482,26 +402,11 @@ button {
     font-size: 12px;
     font-weight: 700;
 }
-
 .pagination button:disabled {
     border-color: #d2d5dd;
     color: #9298a5;
     cursor: not-allowed;
 }
-
-/* RODAPÉ */
-
-.main-footer {
-    background: var(--blue);
-    color: #fff;
-    text-align: center;
-    padding: 18px 12px;
-    font-size: 12px;
-    line-height: 1.7;
-}
-
-/* JANELA DE DETALHES */
-
 .details-dialog {
     width: min(520px, calc(100% - 28px));
     max-height: 85vh;
@@ -511,11 +416,9 @@ button {
     border-radius: 13px;
     box-shadow: 0 15px 55px rgba(0, 0, 0, .28);
 }
-
 .details-dialog::backdrop {
     background: rgba(10, 17, 43, .58);
 }
-
 .dialog-header {
     display: flex;
     justify-content: space-between;
@@ -525,11 +428,9 @@ button {
     background: var(--blue);
     color: #fff;
 }
-
 .dialog-header h2 {
     font-size: 18px;
 }
-
 .close-modal {
     border: 0;
     background: transparent;
@@ -537,23 +438,19 @@ button {
     font-size: 28px;
     line-height: 1;
 }
-
 .dialog-content {
     padding: 20px;
     font-size: 14px;
     line-height: 1.6;
 }
-
 .dialog-content p {
     margin: 8px 0;
 }
-
 .dialog-actions {
     display: flex;
     justify-content: flex-end;
     padding: 0 20px 18px;
 }
-
 .primary-button {
     padding: 9px 18px;
     border: 0;
@@ -562,9 +459,6 @@ button {
     color: #fff;
     font-weight: 700;
 }
-
-/* MENSAGENS */
-
 .api-message {
     width: min(900px, calc(100% - 36px));
     margin: 0 auto 18px;
@@ -574,84 +468,81 @@ button {
     color: #8c1d1d;
     font-size: 13px;
 }
-
-/* RESPONSIVIDADE */
-
 @media (max-width: 800px) {
-
     .container {
         grid-template-columns: 1fr;
         gap: 22px;
     }
-
     .sidebar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px 16px;
     }
-
     .sidebar h2,
     .search-filter,
     .clear-button {
         grid-column: 1 / -1;
     }
-
     .filter-section {
         margin-bottom: 8px;
     }
-
     .header-left {
         display: none;
     }
-
     .main-header {
         grid-template-columns: 1fr 1fr;
     }
-
     .header-center {
         text-align: left;
     }
-
 }
-
 @media (max-width: 540px) {
-
     .main-header {
         grid-template-columns: 1fr;
         justify-items: center;
     }
-
     .header-center {
         text-align: center;
     }
-
     .header-right {
         justify-self: center;
     }
-
     .main-nav ul {
         gap: 10px;
     }
-
     .main-nav a {
         font-size: 12px;
     }
-
     .container {
         width: min(100% - 22px, 1180px);
         margin-top: 20px;
     }
-
     .sidebar {
         display: block;
     }
-
     .events-grid {
         grid-template-columns: 1fr;
     }
-
     .results-line {
         font-size: 11px;
     }
-
+}
+.tituloprincipal{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+.rodape{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(6, 18, 103);
+}
+.tituloprincipal{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+.cabecalho {
+    background-color: rgb(6, 18, 103);
+    padding: 15px;
+}
 }

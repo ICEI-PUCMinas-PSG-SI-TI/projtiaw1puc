@@ -2,21 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+     font-family: "Times New Roman", Times, serif;
 }
+*{
+     font-family: "Times New Roman", Times, serif;
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    padding: 15px 25px;
+.cabecalho {
+    background-color: rgb(6, 18, 103);
+    padding: 15px;
 }
 
 .logo h1 {
@@ -24,7 +24,7 @@ header {
 }
 
 .logo small {
-    font-style: italic;
+    
 }
 
 .header-right {
@@ -130,15 +130,13 @@ main {
     align-items: center;
     background-color: #f3f3f3;
 }
-
-footer {
-    border-top: 1px solid #ccc;
-    text-align: center;
-    padding: 15px;
+.rodape{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(6, 18, 103);
 }
-
 @media (max-width: 768px) {
-
     .conteudo {
         flex-direction: column;
         align-items: center;
@@ -146,9 +144,16 @@ footer {
 
     .texto {
         text-align: center;
+
     }
 
     .botoes {
         justify-content: center;
+        
     }
+}
+.tituloprincipal{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
 }

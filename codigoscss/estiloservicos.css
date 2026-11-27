@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
 }
+*{
+     font-family: "Times New Roman", Times, serif;
 
 body {
     margin: 0;
@@ -201,13 +203,6 @@ button:hover {
     padding: 3px 8px;
 }
 
-footer {
-    background: white;
-    text-align: center;
-    padding: 20px;
-    color: #555;
-    border-top: 1px solid #ddd;
-}
 
 @media (max-width: 750px) {
 
@@ -223,4 +218,15 @@ footer {
         padding: 18px;
     }
 
+}
+.rodape{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(6, 18, 103);
+}
+.tituloprincipal{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
 }

@@ -1,15 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    color: #222;
-    font-family: Arial, sans-serif;
-}
-
+*{
+     font-family: "Times New Roman", Times, serif;
 header {
     padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
@@ -78,4 +68,15 @@ h2 {
     .conteudo {
         flex-direction: column;
     }
+}
+.rodape{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(6, 18, 103);
+}
+.tituloprincipal{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
 }

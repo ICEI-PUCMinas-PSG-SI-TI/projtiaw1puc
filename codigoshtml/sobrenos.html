@@ -6,17 +6,119 @@
     <title>Sobre nós</title>
     <link rel="stylesheet" href="../codigoscss/estilosobrenos.css">
         <link rel="icon" type="image/png" href="../img/Logomarca.png">
+         <link rel="stylesheet" href="../codigoscss/estilopinicial.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header class="cabecalho position-relative p-3" style="height: 80px;">
+  <div class="tituloprincipal">
+   <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+  <img 
+    src="../img/Logomarca.png" 
+    alt="Logo Signals" 
+    width="50" 
+    height="60" 
+    class="position-absolute start-0 top-50 translate-middle-y ms-3 imagemcabec d-inline-block"
+  >
+</a>
+    </div>
+    <div class ="tituloprincipal">
+    <h2 style="color: #ffffff;" class="ms-5 ps-4 m-0">SIGNALS</h2>
+    </div>
+  </div>
+  <nav  class="navbar navbar-dark position-absolute top-0 end-0 m-2" >
+  <div class="container-fluid p-0">
+    <button class="navbar-toggler" 
+    type="button" data-bs-toggle="offcanvas" 
+    data-bs-target="#offcanvasDarkNavbar" 
+    aria-controls="offcanvasDarkNavbar" 
+    aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" 
+    tabindex="-1" 
+    id="offcanvasDarkNavbar" 
+    aria-labelledby="offcanvasDarkNavbarLabel" 
+    style="background-color: rgb(6, 18, 103);"
+       >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu de navegação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Página inicial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mais opções...
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Dúvidas sobre serviços</a></li>
+              <li><a class="dropdown-item" href="#">Dúvidas sobre navegar em eventos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Casos de sucesso</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquise algo aqui" aria-label="Search"/>
+          <button class="btn btn-success" type="submit" style="background-color: rgb(3, 11, 71);">Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="dropdown position-absolute top-50 translate-middle-y" style="right: 260px;">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:rgb(6, 18, 103)">
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Eventos</a></li>
+      <li><a class="dropdown-item" href="#">Notícias</a></li>
+      <li><hr class="dropdown-divider"></li>
+    </ul>
+  </div>
+</header>
          <hr>
     <div class="rodape">
-<footer class="text-center py-3 mt-auto" style="text-align: center; background-color: rgb(16, 45, 212); color: white;">
-     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';"> Dúvidas? Entre em contato conosco, pelo email: signals@gmail.com.br</h4>
-     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">Ou pelo número: (31)90000-0000</h4>
-      <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" onmouseout= "this.style.color='white';">© 2026 SIGNALS. Todos os direitos reservardos.</h4>
+ <div class="rodape">
+<footer class="position-relative text-center py-3 mt-auto" 
+style="text-align: center;  
+color: white;"
+>
+<div class="logo-abaixo">
+<img 
+    src="../img/Logomarca.png" 
+    alt="Logo Signals" 
+    width="200" 
+    height="200" 
+    >
      </div>
+     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" 
+     onmouseout= "this.style.color='white';"> 
+      Dúvidas? Entre em contato conosco, pelo email: signals@gmail.com.br</h4>
+     <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" 
+     onmouseout= "this.style.color='white';">
+      Ou pelo número: (31)90000-0000</h4>
+      <h4 class="mb-0" onmouseover="this.style.color='rgb(4, 19, 134)';" 
+      onmouseout= "this.style.color='white';">
+        © 2026 SIGNALS. Todos os direitos reservardos.</h4>
 </div>
     </footer>
+  </div>
         <script src="../codigosjavascript/sobrenos.js"></script>
 </body>
 </html>
